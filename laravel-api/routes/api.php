@@ -19,11 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', function () {
-    return response()->json([
-        'message'=>'test success',
-        'status'=> 200
-    ]);
-});
+Route::post('/registerUser', [AuthController::class, 'registerUser']);
 
-Route::post('/adduser', [AuthController::class , 'addUser']);
+
+Route::get('/test', function () {
+    return "test success";
+});
